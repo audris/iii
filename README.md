@@ -1,0 +1,58 @@
+III (Ice Cube) Interactive Image Index
+======================================
+
+III Interactions:
+=================
+Set width or height of the thumbnail window:
+____________________________________________
+ctrl	Left	Button - set the size of the thumbnail window to
+                      current mouse position (set number of rows for
+                      top-down layout, set number of columns for
+                      accross layout)   
+
+Select subsets of thumbnails
+__________
+	Left	Button - select one thumbnail under the mouse (deselect others)
+shift	Left	Button - add thumbnail under the mouse to current
+			selection; remove it from  current selection if it is already selected. 
+shift	Middle	Button - set the begining of a continous selection.
+shift	Right	Button - set the end of a continous selection.         
+
+Additional functions
+____________________
+	Middle	Button - same as shift Left Button, but also show on LVR.
+twice	Middle	Button - same as Middle Button, but also show image with xv.
+
+ctrl	Right	Button - start new III on the current selection.
+	Right	Button - animate the current selection.
+twice	Right	Button - get all images from the current selection onto disk;
+
+
+
+III startup:
+iii (then use page menu to read in the buitin pages)
+iii name (to start with one of the defined pages)
+iii index name (to create a sub-page from the page "name" using
+                objects specifde in "index" file) 
+
+III page description:
+III page is a set of four files with the same first part "name" and 
+different extensions. The extensions are
+"name".pgm    for thumbnail collection
+"name".index  for associated data
+"name".lvr    for frame numbers on LVR
+"name".cd     for index numbers in the overall database.
+There are four predifined (buitin) pages
+saturn, jupiter, uranus, neptune, all.
+Other pages may be created interactively using action invoked by 
+"ctrl Right Button".
+
+
+
+
+
+
+
+
+
+
