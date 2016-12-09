@@ -1,0 +1,3 @@
+#!/bin/sh
+rsh sloth "/INSANE/usr/u1/audris/planets/lvrShowBin $1"
+

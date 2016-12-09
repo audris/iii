@@ -1,0 +1,31 @@
+#!/bin/csh -f
+echo $1
+set b=`echo 6537 + 2623 | bc`
+set c=`echo 6537 + 10561 | bc`
+if ($1 < $b && $1 >= "6537") then
+ set VOL="4"
+ set x=`echo $1 + 1 - 6537 | bc`
+else
+ if ($1 < $c && ii >= $b) then
+  set VOL="5"
+  set x=`echo $1 + 1 - $b| bc`
+ else
+   exit
+ endif
+endif 
+
+echo $x $VOL
+
+set x=`head -$x /INSANE/usr/u1/audris/planets/$VOL.index | tail -1 | /INSANE/usr/u1/audris/planets/extractFilename1`
+echo $x
+
+if ($VOL == "4") then 
+	set rhost=abulia
+else
+	set rhost=pestilence
+endif
+echo "rsh $rhost -n cat \'$x\' | /INSANE/usr/u1/audris/planets/decomp)"
+rsh stupid "(rsh $rhost -n "cat \'$x\'" | /INSANE/usr/u1/audris/planets/decomp)" | \
+	/INSANE/usr/u1/audris/planets/d1 | \
+	xv -display "`env | grep DISPLAY | cut -f2 -d= | cut -f1 -d:`:0.0" -geometry +240+100 -
+	

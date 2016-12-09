@@ -1,0 +1,12 @@
+#!/bin/csh -f
+
+if (`xrdb -query - | grep III | wc -l` == "0") then
+	echo "III*foreground:white\
+III*background:black\
+III*font:*times*24*" | xrdb -merge -
+endif
+if (`env | grep PLANETS_BASE | wc -l` == "0") then
+	setenv PLANETS_BASE /home/audris/legacy/planets
+endif
+$0.bin $1 $2 
+#rm -f /usr/tmp/*
